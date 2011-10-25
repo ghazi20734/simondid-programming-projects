@@ -90,7 +90,6 @@ public class SingleTouchHandler implements TouchHandler, OnTouchListener {
      * event buffer as the buffer is filled on the UI thread (when this method is called) and emptied
      * on the main loop thread in the {@link Game#run} method (see {@link Game#fillBuffers}). 
      */
-    @Override
     public boolean onTouch(View view, MotionEvent event) {
         synchronized(touchEventBuffer) {
             TouchEvent touchEvent = touchEventPool.obtain();
