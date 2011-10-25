@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/edInput">
+    </EditText>
+    <Button android:text="save in spot3" android:id="@+id/bSave3" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+    <Button android:text="save in spot2" android:id="@+id/bSave2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+    <Button android:text="Save in spot1" android:id="@+id/bSave1" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+    <Button android:text="check" android:id="@+id/bDon" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+    
+</LinearLayout>
