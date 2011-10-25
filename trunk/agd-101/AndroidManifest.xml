@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2011 Mario Zechner
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.badlogic.agd"
+      android:versionCode="1"
+      android:versionName="1.0"
+      android:installLocation="preferExternal">    
+
+    <application android:icon="@drawable/icon" 
+    			 android:label="@string/app_name"
+    			 android:debuggable="true">                
+		<activity android:name=".examples.WakeLockExample"
+		          android:label="Wake Lock Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.FullscreenExample"
+		          android:label="Fullscreen Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.MainLoopExample"
+		          android:label="Main Loop Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.SurfaceViewExample"
+		          android:label="SurfaceView Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.ScreenManagmentExample"
+		          android:label="Screen Managment Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.ClearExample"
+		          android:label="Clear Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.BitmapExample"
+		          android:label="Bitmap Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.PollingKeyExample"
+		          android:label="Polling Key Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.TouchExample"
+		          android:label="Touch Key Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.AccelerometerExample"
+		          android:label="Accelerometer Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.KeyEventExample"
+		          android:label="Key Event Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.TouchEventExample"
+		          android:label="Touch Event Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.SoundExample"
+		          android:label="Sound Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.MusicExample"
+		          android:label="Music Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>		
+		
+		<activity android:name=".examples.FramerateExample"
+		          android:label="Framerate Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>
+		
+		<activity android:name=".examples.DeltaTimeExample"
+		          android:label="DeltaTime Example"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>	
+		
+		<activity android:name=".droidanoid.Mockup"
+		          android:label="Droidanoid Mockup"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>	
+		
+		<activity android:name=".workshop.MoverExample"
+		          android:label="MoverExample"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />                
+		    </intent-filter>
+		</activity>	
+		
+		<activity android:name=".droidanoid.Droidanoid"
+		          android:label="Droidanoid"
+		          android:configChanges="keyboard|keyboardHidden|orientation"
+		          android:screenOrientation="portrait">
+		    <intent-filter>
+		        <action android:name="android.intent.action.MAIN" />
+		        <category android:name="android.intent.category.LAUNCHER" />                
+		    </intent-filter>
+		</activity>			
+    </application>
+        
+    <uses-permission android:name="android.permission.WRITE_EXTERNALSTORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="11"/>
+</manifest>
