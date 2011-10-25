@@ -179,7 +179,6 @@ state = Environment.getExternalStorageState();
 
 	
 
-	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()){
@@ -208,7 +207,6 @@ state = Environment.getExternalStorageState();
 	}
 
 
-	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
 		
@@ -395,7 +393,6 @@ state = Environment.getExternalStorageState();
 	    	}
 	    }
 
-	@Override
 	public void onCompletion(MediaPlayer mp) {
 		// TODO Auto-generated method stub
 		Log.i("state", "onCompletion has been called");
