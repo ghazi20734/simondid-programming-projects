@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="simon.programming"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="8" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
+        <activity android:name=".Splash"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Accelerate"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Accelerate" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SQLView"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.SQLView" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+             <activity android:name=".startingPoint"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.startingPoint" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+                     <activity android:name=".Menu"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Menu" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+          <activity android:name=".TextPlay"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.TextPlay" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Email"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Email" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".Camara"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
+                 
+            <intent-filter>
+                <action android:name="simon.programming.Camara" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+            <activity android:name=".Data"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Data" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>    
+        <activity android:name=".OpenedClass"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.OpenedClass" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".private1"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.private1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".private2"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.private2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+		<activity android:name=".AboutUs"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="simon.programming.AboutUs" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Prefs"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Prefs" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Slider"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Slider" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".Tabs"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Tabs" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".SimpleBrowser"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.SimpleBrowser" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+            <activity android:name=".Flipper"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Flipper" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+            <activity android:name=".Sharedprefs"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.Sharedprefs" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+            <activity android:name=".private2n1"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.private2n1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+            <activity android:name=".private2n2"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.private2n2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+             <activity android:name=".InternalData"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.InternalData" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+          <activity android:name=".ExternalData"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.ExternalData" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SQLiteExample"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="simon.programming.SQLiteExample" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+    </application>
+</manifest>
