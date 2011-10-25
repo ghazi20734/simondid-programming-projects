@@ -15,6 +15,9 @@
  ******************************************************************************/
 package com.badlogic.agd;
 
+import android.view.MotionEvent;
+import android.view.View;
+
 /**
  * An interface to be implemented by various backends, e.g.
  * for Android 1.5/1.6 or Android 2.0.
@@ -54,4 +57,6 @@ public interface TouchHandler {
      * @return the y-coordinate in the coordinate system of the View this handler is registered with.
      */
     public int getTouchY(int pointer);
+
+	boolean onTouch(View view, MotionEvent event);
 }
