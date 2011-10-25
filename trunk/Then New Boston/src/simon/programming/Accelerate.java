@@ -33,7 +33,7 @@ public class Accelerate extends Activity implements SensorEventListener {
 	MyBringBackSurface ourSurfaceView;
 
 	public class MyBringBackSurface extends SurfaceView implements Runnable {
-
+int testingsvn;
 		SurfaceHolder ourHolder;
 		Thread ourThread = null;
 		boolean isRunning = false;
