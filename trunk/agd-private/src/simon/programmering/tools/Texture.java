@@ -1,4 +1,4 @@
-package com.badlogic.gamedev.tools;
+package simon.programmering.tools;
 
 import javax.microedition.khronos.opengles.GL10;
 

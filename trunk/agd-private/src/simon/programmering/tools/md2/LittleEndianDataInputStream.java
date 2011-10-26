@@ -1,4 +1,4 @@
-package com.badlogic.gamedev.tools.md2;
+package simon.programmering.tools.md2;
 
 import java.io.*;
 

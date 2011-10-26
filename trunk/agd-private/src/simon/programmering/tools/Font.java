@@ -1,21 +1,20 @@
-package com.badlogic.gamedev.tools;
+package simon.programmering.tools;
 
 import java.util.HashMap;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import simon.programmering.tools.Mesh.PrimitiveType;
+import simon.programmering.tools.Texture.TextureFilter;
+import simon.programmering.tools.Texture.TextureWrap;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
-
-import com.badlogic.gamedev.tools.Mesh.PrimitiveType;
-import com.badlogic.gamedev.tools.Texture.TextureFilter;
-import com.badlogic.gamedev.tools.Texture.TextureWrap;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 
 
 public class Font
