@@ -1,15 +1,14 @@
-package com.badlogic.gamedev.tools.md2;
+package simon.programmering.tools.md2;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
 
-import javax.microedition.khronos.opengles.GL;
 import javax.microedition.khronos.opengles.GL10;
 import javax.microedition.khronos.opengles.GL11;
 
-import com.badlogic.gamedev.tools.Mesh.PrimitiveType;
+import simon.programmering.tools.Mesh.PrimitiveType;
 
 public class IndexedMesh {
 	private boolean dirty = true;

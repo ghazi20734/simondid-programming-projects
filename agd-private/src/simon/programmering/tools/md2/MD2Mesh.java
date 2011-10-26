@@ -1,8 +1,8 @@
-package com.badlogic.gamedev.tools.md2;
+package simon.programmering.tools.md2;
 
 import javax.microedition.khronos.opengles.GL10;
 
-import com.badlogic.gamedev.tools.Mesh.PrimitiveType;
+import simon.programmering.tools.Mesh.PrimitiveType;
 
 public class MD2Mesh 
 {

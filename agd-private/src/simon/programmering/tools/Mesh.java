@@ -1,4 +1,4 @@
-package com.badlogic.gamedev.tools;
+package simon.programmering.tools;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

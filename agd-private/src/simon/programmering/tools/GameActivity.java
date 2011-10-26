@@ -1,4 +1,4 @@
-package com.badlogic.gamedev.tools;
+package simon.programmering.tools;
 
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
