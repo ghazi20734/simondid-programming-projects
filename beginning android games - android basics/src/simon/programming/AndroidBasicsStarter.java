@@ -16,23 +16,30 @@ public class AndroidBasicsStarter extends ListActivity{
     		"FontTest", "SurfaceViewTest" };
 	
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, tests));
-        
-        
-    }
-	public void onListItemClick(ListView list, View view , int Position,long id){
-		super.onListItemClick(list, view, Position, id);
-		String testName = tests[Position];
-		try{
-			Class clazz = Class.forName("simon.programming."+testName);
-			Intent intent = new Intent(this,clazz);
-			
-		}catch (Exception e) {
-			// TODO: handle exception
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setListAdapter(new ArrayAdapter<String>(AndroidBasicsStarter.this, android.R.layout.simple_list_item_1,tests));
+		
+		
+		
+	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		// TODO Auto-generated method stub
+		super.onListItemClick(l, v, position, id);
+		String cheese = tests[position];
+		Class ourClass;
+		try {
+			ourClass = Class.forName("simon.programming."+cheese);
+		
+		Intent ourIntent = new Intent(AndroidBasicsStarter.this,ourClass);
+		startActivity(ourIntent);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
-}
+	}
