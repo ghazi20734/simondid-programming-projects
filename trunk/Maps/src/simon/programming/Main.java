@@ -1,5 +1,14 @@
 package simon.programming;
 
+import java.util.List;
+
+import android.os.Bundle;
+import android.view.MotionEvent;
+
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapView;
+import com.google.android.maps.Overlay;
+
 public class Main extends MapActivity {
     /** Called when the activity is first created. */
 	
