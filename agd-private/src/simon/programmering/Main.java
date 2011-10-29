@@ -5,6 +5,8 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Gallery;
 import javax.microedition.khronos.egl.EGL10;
@@ -29,7 +31,7 @@ public class Main extends GameActivity implements GameListener {
 
 	public void setup(GameActivity activity, GL10 gl) {
 		// TODO Auto-generated method stub
-		 ByteBuffer buffer = ByteBuffer.allocateDirect( 3 * 4 * 3 );
+		 ByteBuffer buffer = ByteBuffer.allocateDirect( 4 * 5 * 3 );
 	       buffer.order(ByteOrder.nativeOrder());
 	       vertices = buffer.asFloatBuffer();
 	       vertices.put( -0.6f );
@@ -58,6 +60,13 @@ public class Main extends GameActivity implements GameListener {
 	       colors.put( 1 );
 	       colors.put( 1 );	
 	       colors.rewind();
+	      
+	       try{
+	    	   Bitmap bitmap = null;
+	    	    bitmap = BitmapFactory.decodeStream( getAssets().open( "droid.png" ) );
+	       }catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void mainLoopIteration(GameActivity activity, GL10 gl) {
