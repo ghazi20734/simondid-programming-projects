@@ -1,0 +1,3 @@
+hey
+
+okay alt det tekst der står her er loadet fra en fil ved navn myawesometext.txt i mappen assets/text/myawesometext.txt
