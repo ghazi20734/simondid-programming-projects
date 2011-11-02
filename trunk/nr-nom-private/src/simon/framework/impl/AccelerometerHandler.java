@@ -1,4 +1,4 @@
-package simon.freamwork.impl;
+package simon.framework.impl;
 
 import android.content.Context;
 import android.hardware.Sensor;

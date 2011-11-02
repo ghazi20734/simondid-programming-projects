@@ -1,6 +1,6 @@
-package simon.freamwork.impl;
+package simon.framework.impl;
 
-import simon.freamwork.Sound;
+import simon.framework.Sound;
 import android.media.SoundPool;
 
 public class AndroidSound implements Sound {
@@ -12,7 +12,7 @@ public class AndroidSound implements Sound {
         this.soundPool = soundPool;
     }
 
-   
+    
     public void play(float volume) {
         soundPool.play(soundId, volume, volume, 0, 0, 1);
     }

@@ -1,4 +1,4 @@
-package simon.freamwork;
+package simon.framework;
 
 public interface Music {
     public void play();

@@ -1,11 +1,10 @@
-package simon.freamwork.impl;
+package simon.framework.impl;
 
 import java.io.IOException;
 
-import simon.freamwork.Audio;
-import simon.freamwork.Music;
-import simon.freamwork.Sound;
-
+import simon.framework.Audio;
+import simon.framework.Music;
+import simon.framework.Sound;
 import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
