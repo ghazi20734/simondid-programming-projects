@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import simon.freamwork.FileIo;
+import simon.freamwork.FileIO;
 import android.content.res.AssetManager;
 import android.os.Environment;
 
-public class AndroidFileIO implements FileIo {
+public class AndroidFileIO implements FileIO {
 	
 	   AssetManager assets;
 	    String externalStoragePath;
