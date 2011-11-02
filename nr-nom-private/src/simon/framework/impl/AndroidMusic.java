@@ -1,9 +1,8 @@
-package simon.freamwork.impl;
+package simon.framework.impl;
 
 import java.io.IOException;
 
-import simon.freamwork.Music;
-
+import simon.framework.Music;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -56,9 +55,8 @@ public class AndroidMusic implements Music, OnCompletionListener {
 
     
     public void play() {
-        if (mediaPlayer.isPlaying()){
+        if (mediaPlayer.isPlaying())
             return;
-            }
 
         try {
             synchronized (this) {
