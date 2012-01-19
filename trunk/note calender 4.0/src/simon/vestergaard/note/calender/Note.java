@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Random;
 
+import simon.vestergaard.note.calender.R.drawable;
+
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -18,6 +20,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
@@ -33,6 +36,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -139,12 +144,16 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 	Button Bedit,Bback;
 	EditText EditTextData;
 	CheckBox cb1,cb2,cb3,cb4;
+	
 	TextView TVnoteName,TVcategory;
 	 Main mainClass = new Main();
 	 NoteSelector NoteSelectorClass = new NoteSelector();
+	 LinearLayout background;
+	 RelativeLayout background2;
 	DatabaseHandler database = new DatabaseHandler(Note.this);
 	boolean editing = true;
 	String data;
+	private static final String KEY_PREFERANCES_THEMES="themess";
 	NotificationAlarmHandler Notificationalarmhandler = new NotificationAlarmHandler();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {		//==================================on Create================================================
@@ -162,7 +171,33 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 	    finish();
 	    overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out );
 	}
-
+	 public int whatThemTouse(){
+			final String PREFS_NAME = "MyPrefsFile";
+			 SharedPreferences.Editor SettingsEditor = null;
+			 SharedPreferences settings = null;
+			 settings = getSharedPreferences(PREFS_NAME, 0);
+			    SettingsEditor = settings.edit();
+			drawable hej = new drawable();
+			int hej2 = hej.them_blue_black;
+			
+			if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==1){
+				hej2 =hej.them_green_black;	
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==2){
+				hej2 =hej.them_pink_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==3){
+				hej2 =hej.them_red_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==4){
+				hej2 =hej.them_yellow_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==5){
+				hej2 =hej.them_orange_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==7){
+				hej2 =hej.them_black_black;
+			}
+				
+			
+			return hej2;
+			
+		}
 	private void CheckIfCheckBoxesAreChecked() {
 		// TODO Auto-generated method stub
 	database.open();
@@ -197,6 +232,10 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 		EditTextData =(EditText)findViewById(R.id.ETdatatext);
 		TVnoteName =(TextView) findViewById(R.id.TVnote);
 		TVcategory =(TextView)findViewById(R.id.TVcategory);
+		background =(LinearLayout)findViewById(R.id.backgroudNoteScreen);
+		background2=(RelativeLayout)findViewById(R.id.backgroudNoteScreen2);
+		background2.setBackgroundColor(whatThemTouse());
+		background.setBackgroundColor(whatThemTouse());
 		cb1 =(CheckBox)findViewById(R.id.checkBox1);
 		cb2 =(CheckBox)findViewById(R.id.checkBox2);
 		cb3 =(CheckBox)findViewById(R.id.checkBox3);

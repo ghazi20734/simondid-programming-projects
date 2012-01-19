@@ -91,7 +91,7 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 		    finish();
 		    overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out );
 		}
-
+	
 	 public int whatThemTouse(){
 			final String PREFS_NAME = "MyPrefsFile";
 			 SharedPreferences.Editor SettingsEditor = null;
@@ -105,7 +105,16 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 				hej2 =hej.them_green_black;	
 			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==2){
 				hej2 =hej.them_pink_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==3){
+				hej2 =hej.them_red_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==4){
+				hej2 =hej.them_yellow_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==5){
+				hej2 =hej.them_orange_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==7){
+				hej2 =hej.them_black_black;
 			}
+				
 			
 			return hej2;
 			
@@ -125,8 +134,7 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 		background2=(RelativeLayout)findViewById(R.id.BackGroundThem);
 		
 		BackGround.setBackgroundResource(whatThemTouse());
-		background2.setBackgroundResource(whatThemTouse());
-		
+				
 		
 		
 		aa = new FancyAdapter();

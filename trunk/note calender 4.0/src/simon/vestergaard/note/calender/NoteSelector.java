@@ -2,12 +2,12 @@ package simon.vestergaard.note.calender;
 
 import java.util.ArrayList;
 
-import simon.vestergaard.note.calender.Main.FancyAdapterEditing;
-
+import simon.vestergaard.note.calender.R.drawable;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,17 +16,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
+
 
 
 public class NoteSelector extends Activity implements OnClickListener, OnItemClickListener {
@@ -39,7 +38,10 @@ public class NoteSelector extends Activity implements OnClickListener, OnItemCli
 	public static String noteName=null;
 	Button Bback,Bnew,Bedit;
 	ListView LMain;
+	private static final String KEY_PREFERANCES_THEMES="themess";
 	TextView TVnote,TVcategory;
+	LinearLayout background1;
+	RelativeLayout background2;
 	FancyAdapter aa = null;
 	FancyAdapterEditing aaa =null;
 	public static ArrayList<String>listDataNote= new ArrayList<String>();
@@ -63,7 +65,33 @@ public class NoteSelector extends Activity implements OnClickListener, OnItemCli
 	    finish();
 	    overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out );
 	}
-
+	 public int whatThemTouse(){
+			final String PREFS_NAME = "MyPrefsFile";
+			 SharedPreferences.Editor SettingsEditor = null;
+			 SharedPreferences settings = null;
+			 settings = getSharedPreferences(PREFS_NAME, 0);
+			    SettingsEditor = settings.edit();
+			drawable hej = new drawable();
+			int hej2 = hej.them_blue_black;
+			
+			if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==1){
+				hej2 =hej.them_green_black;	
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==2){
+				hej2 =hej.them_pink_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==3){
+				hej2 =hej.them_red_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==4){
+				hej2 =hej.them_yellow_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==5){
+				hej2 =hej.them_orange_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==7){
+				hej2 =hej.them_black_black;
+			}
+				
+			
+			return hej2;
+			
+		}
 	private void initilize() {
 		// TODO Auto-generated method stub
 	/*	Bback =(Button)findViewById(R.id.Bback);
@@ -73,6 +101,10 @@ public class NoteSelector extends Activity implements OnClickListener, OnItemCli
 		TVnote =(TextView)findViewById(R.id.TVnote);
 		//Bedit =(Button)findViewById(R.id.Bedit);
 		
+		background1 =(LinearLayout)findViewById(R.id.backgroudNoteSelectorScreen1);
+		background2 =(RelativeLayout)findViewById(R.id.backgroudNoteSelectorScreen2);
+		background1.setBackgroundColor(whatThemTouse());
+		background2.setBackgroundColor(whatThemTouse());
 	//	Bedit.setOnClickListener(this);
 		//Bback.setOnClickListener(this);
 		//Bnew.setOnClickListener(this);
