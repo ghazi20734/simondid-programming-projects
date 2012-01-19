@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:weightSum="100" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+
+        <Button
+            android:id="@+id/Badd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/plusicon"
+            android:text="@string/ADD" />
+
+        <ListView
+            android:id="@+id/LMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Badd"
+            android:layout_weight="1"
+             >
+
+        </ListView>
+
+        <TextView
+            android:id="@+id/TVmainHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/Badd"
+            android:layout_alignBottom="@+id/Badd"
+            android:layout_centerHorizontal="true"
+            android:text="@string/catagories"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/gray2" />
+
+    </RelativeLayout>
+
+</LinearLayout>
