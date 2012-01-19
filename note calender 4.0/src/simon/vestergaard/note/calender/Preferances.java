@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,8 +18,10 @@ public class Preferances extends Activity implements OnClickListener, OnItemSele
 	private static final String KEY_PREFERANCES_THEMES="themes";
 	Spinner themSpinner;
 	int themposisition =0;
+	LinearLayout background;
 	public static final String PREFS_NAME = "MyPrefsFile";
-	final String [] items=new String[]{"Blue and Black","Green and Black","Pink and Black"}; // thems
+	final String [] items=new String[]{"Blue and Black","Green and Black","Pink and Black","Red and Black","Yellow and Black","orange and Black",
+			"Black and Black",}; // thems
 	 SharedPreferences.Editor SettingsEditor = null;
 	 SharedPreferences settings = null;
 	@Override
@@ -34,7 +37,8 @@ public class Preferances extends Activity implements OnClickListener, OnItemSele
 		// TODO Auto-generated method stub
 		getSelectedThem();
 		themSpinner =(Spinner)findViewById(R.id.ThemSpinner);
-		
+		background=(LinearLayout)findViewById(R.id.BackGroundPreferances);
+		//background.setBackgroundColor(whatThemTouse());
 		ArrayAdapter ad=new ArrayAdapter(this,android.R.layout.simple_spinner_item,items);
 		 ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		 themSpinner.setSelection(themposisition);
@@ -86,6 +90,22 @@ Log.i("Preferances", "pink and black choosen");
 				
 				break;
 			case 3:
+				SettingsEditor.putInt("themess", 3);
+				break;
+			case 4:
+				SettingsEditor.putInt("themess", 4);
+				break;
+			case 5:
+				SettingsEditor.putInt("themess", 5);
+				break;
+			case 6:
+				SettingsEditor.putInt("themess", 6);
+				break;
+			case 7:
+				SettingsEditor.putInt("themess", 7);
+				break;
+			case 8:
+				SettingsEditor.putInt("themess", 8);
 				break;
 			}
 			
@@ -103,6 +123,34 @@ Log.i("Preferances", "pink and black choosen");
 		// TODO Auto-generated method stub
 		
 	}
-	
+	 public int whatThemTouse(){
+			final String PREFS_NAME = "MyPrefsFile";
+			 SharedPreferences.Editor SettingsEditor = null;
+			 SharedPreferences settings = null;
+			 settings = getSharedPreferences(PREFS_NAME, 0);
+			    SettingsEditor = settings.edit();
+			drawable hej = new drawable();
+		
+			int hej2;
+			if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==1){
+				hej2 =hej.them_green_black;	
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==2){
+				hej2 =hej.them_pink_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==3){
+				hej2 =hej.them_red_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==4){
+				hej2 =hej.them_yellow_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==5){
+				hej2 =hej.them_orange_black;
+			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==7){
+				hej2 =hej.them_black_black;
+			}else{
+				hej2 = hej.them_blue_black;		
+			}
+				
+			
+			return hej2;
+			
+		}
 	
 }
