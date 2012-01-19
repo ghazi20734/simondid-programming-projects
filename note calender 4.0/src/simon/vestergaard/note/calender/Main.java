@@ -40,8 +40,10 @@ import android.widget.Toast;
 
 
 
+
 public class Main extends Activity implements OnClickListener, OnItemClickListener{
-	
+	private static final String KEY_PREFERANCES_THEMES="themes";
+
 	static final int Dialog_Back_Up_good =1;
 	static final int Dialog_Back_Up_Fail =2;
 	static final int Dialog_import_database=3;
@@ -97,8 +99,11 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 			    SettingsEditor = settings.edit();
 			drawable hej = new drawable();
 			int hej2 = hej.gradient_box;
-			if(settings.getString("themes", "gradient_box")==("them_green")){
+			
+			if(settings.getInt("themess", 0)==1){
 				hej2 =hej.them_green;	
+			}else if(settings.getInt("themess", 0)==1){
+				hej2 =hej.them_pink;
 			}
 			
 			return hej2;
