@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Preferances extends Activity implements OnClickListener, OnItemSelectedListener {
+	private static final String KEY_PREFERANCES_THEMES="themes";
 	Spinner themSpinner;
 	public static final String PREFS_NAME = "MyPrefsFile";
 	final String [] items=new String[]{"Blue and Black","Green and Black","Pink and Black"}; // thems
@@ -50,23 +51,36 @@ public class Preferances extends Activity implements OnClickListener, OnItemSele
 			Log.i("Preferances", "posisition is:"+position);
 			switch(position){
 			case 0:
-			//	SettingsEditor.putString("themes", "gradient_box");
+				Log.i("Preferances", "blue and black choosen");
+				
+				SettingsEditor.putInt("themess", 0);
+				SettingsEditor.commit();
+				SettingsEditor.apply();
+				
+
 				
 				break;
 			case 1:
-				SettingsEditor.putString("themes", "them_green");
+				Log.i("Preferances", "Themes Green choosen");
+				
+				SettingsEditor.putInt("themess", 1);
 				SettingsEditor.commit();
+				SettingsEditor.apply();
 				break;
 			case 2:
+Log.i("Preferances", "pink and black choosen");
+				
+				SettingsEditor.putInt("themess", 2);
+				SettingsEditor.commit();
+				SettingsEditor.apply();
 				break;
 			case 3:
 				break;
 			}
 			
-	
 		SettingsEditor.putString("themes", "them_green");
 		SettingsEditor.commit();
-		
+		SettingsEditor.apply();
 	}
 
 	public void onNothingSelected(AdapterView<?> parent) {
