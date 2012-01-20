@@ -67,7 +67,7 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
                     pYear = year;
                     pMonth = monthOfYear;
                     pDay = dayOfMonth;
-                    database.open();
+
                    savedata();
                     showDialog(TIME_DIALOG_ID);
                    
@@ -198,28 +198,7 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 			return hej2;
 			
 		}
-	private void CheckIfCheckBoxesAreChecked() {
-		// TODO Auto-generated method stub
-	database.open();
-		int code =database.getAlarmSetState(Selected_category);
-		database.close();	
-		
-		if(code ==1){
-			Log.i("Note", "CheckIfCheckBoxesAreChecked set :: code ="+code);
-			cb1.setChecked(true);
-			cb1.setText(R.string.CancelCountDownAlarm);
-			
-		}else if (code ==0){
-			Log.i("Note", "CheckIfCheckBoxesAreChecked not set :: code ="+code);
-			cb1.setChecked(false);
-			
-			
-		}else{
-			Log.i("Note", "CheckIfCheckBoxesAreChecked error code id ="+code);
-		}
-		
-		code = 25;
-	}
+	
 
 	private void initilize() {
 		// TODO Auto-generated method stub
@@ -232,7 +211,7 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 		EditTextData =(EditText)findViewById(R.id.ETdatatext);
 		TVnoteName =(TextView) findViewById(R.id.TVnote);
 		TVcategory =(TextView)findViewById(R.id.TVcategory);
-		background =(LinearLayout)findViewById(R.id.backgroudNoteScreen);
+		background =(LinearLayout)findViewById(R.id.backgroudNoteScreen1);
 		background2=(RelativeLayout)findViewById(R.id.backgroudNoteScreen2);
 		background2.setBackgroundColor(whatThemTouse());
 		background.setBackgroundColor(whatThemTouse());
@@ -267,7 +246,28 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 	        
 	}
 
-
+	private void CheckIfCheckBoxesAreChecked() {
+		// TODO Auto-generated method stub
+	database.open();
+		int code =database.getAlarmSetState(Selected_category);
+		database.close();	
+		
+		if(code ==1){
+			Log.i("Note", "CheckIfCheckBoxesAreChecked set :: code ="+code);
+			cb1.setChecked(true);
+			cb1.setText(R.string.CancelCountDownAlarm);
+			
+		}else if (code ==0){
+			Log.i("Note", "CheckIfCheckBoxesAreChecked not set :: code ="+code);
+			cb1.setChecked(false);
+			
+			
+		}else{
+			Log.i("Note", "CheckIfCheckBoxesAreChecked error code id ="+code);
+		}
+		
+		code = 25;
+	}
 	
 
 	private void LoadDataFromDatabase() {

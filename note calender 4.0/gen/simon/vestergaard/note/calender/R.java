@@ -73,36 +73,34 @@ public final class R {
         public static final int tickicon=0x7f020013;
     }
     public static final class id {
-        public static final int BackGroundPreferances=0x7f08002f;
+        public static final int BackGroundPreferances=0x7f08002d;
         public static final int BackGroundThem=0x7f080015;
         public static final int Badd=0x7f080006;
         public static final int Bback=0x7f08000e;
-        public static final int Bdelete=0x7f080031;
+        public static final int Bdelete=0x7f08002f;
         public static final int Bedit=0x7f08000b;
         public static final int Bnew=0x7f08000c;
         public static final int Bsync=0x7f080011;
-        public static final int Button01=0x7f08002e;
+        public static final int Button01=0x7f08002c;
         public static final int ETdatatext=0x7f08001e;
         public static final int IMVicon=0x7f08000a;
-        public static final int ImageView01=0x7f08002b;
+        public static final int ImageView01=0x7f080029;
         public static final int LMain=0x7f080007;
         public static final int LnoteSelector=0x7f08000d;
-        public static final int MenuBackUp=0x7f080033;
-        public static final int MenuImportDatabase=0x7f080032;
-        public static final int ScrollView01=0x7f08002c;
+        public static final int MenuBackUp=0x7f080031;
+        public static final int MenuImportDatabase=0x7f080030;
+        public static final int ScrollView01=0x7f08002a;
         public static final int TVcategory=0x7f080020;
         public static final int TVmainHeader=0x7f080008;
         public static final int TVnote=0x7f08001f;
         public static final int TVtopText=0x7f08000f;
         public static final int TcatagoryName=0x7f080010;
-        public static final int TextView01=0x7f08002d;
-        public static final int ThemSpinner=0x7f080030;
-        public static final int TopBarBack=0x7f080035;
-        public static final int TopBarEdit=0x7f080037;
-        public static final int backgroudNoteScreen=0x7f08001c;
+        public static final int TextView01=0x7f08002b;
+        public static final int ThemSpinner=0x7f08002e;
+        public static final int TopBarBack=0x7f080033;
+        public static final int TopBarEdit=0x7f080035;
+        public static final int backgroudNoteScreen1=0x7f08001c;
         public static final int backgroudNoteScreen2=0x7f08001d;
-        public static final int backgroudNoteSelectorScreen1=0x7f080029;
-        public static final int backgroudNoteSelectorScreen2=0x7f08002a;
         public static final int button1=0x7f080003;
         public static final int button2=0x7f080017;
         public static final int checkBox1=0x7f080025;
@@ -118,7 +116,7 @@ public final class R {
         public static final int linearLayout2=0x7f080024;
         public static final int linearLayoutForThems=0x7f080014;
         public static final int listView1=0x7f080001;
-        public static final int preferences=0x7f080034;
+        public static final int preferences=0x7f080032;
         public static final int radioButton1=0x7f080019;
         public static final int radioButton2=0x7f08001a;
         public static final int radioButton3=0x7f08001b;
@@ -128,7 +126,7 @@ public final class R {
         public static final int stopAlarm=0x7f080004;
         public static final int textView1=0x7f080012;
         public static final int textView2=0x7f080013;
-        public static final int topbarADD=0x7f080036;
+        public static final int topbarADD=0x7f080034;
     }
     public static final class layout {
         public static final int alarm=0x7f030000;
@@ -170,6 +168,7 @@ public final class R {
         public static final int ImportDatabaseMessagePart1=0x7f06001e;
         public static final int ImportDatabaseMessagePart2=0x7f06001f;
         public static final int New=0x7f060006;
+        public static final int PreferancesNamesForThems=0x7f060023;
         public static final int SelecCategory=0x7f060020;
         public static final int SelectNote=0x7f060021;
         public static final int Sync=0x7f060015;

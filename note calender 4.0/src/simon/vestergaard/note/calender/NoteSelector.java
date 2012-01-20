@@ -97,17 +97,15 @@ public class NoteSelector extends Activity implements OnClickListener, OnItemCli
 	/*	Bback =(Button)findViewById(R.id.Bback);
 		Bnew =(Button)findViewById(R.id.Bnew);*/
 		LMain =(ListView) findViewById(R.id.LMain);
-		TVcategory=(TextView)findViewById(R.id.TVcategory);
-		TVnote =(TextView)findViewById(R.id.TVnote);
+		TVcategory=(TextView)findViewById(R.id.textView1);
+		TVnote =(TextView)findViewById(R.id.textView2);
 		//Bedit =(Button)findViewById(R.id.Bedit);
 		
-		background1 =(LinearLayout)findViewById(R.id.backgroudNoteSelectorScreen1);
-		background2 =(RelativeLayout)findViewById(R.id.backgroudNoteSelectorScreen2);
-		background1.setBackgroundColor(whatThemTouse());
-		background2.setBackgroundColor(whatThemTouse());
-	//	Bedit.setOnClickListener(this);
-		//Bback.setOnClickListener(this);
-		//Bnew.setOnClickListener(this);
+		background1=(LinearLayout)findViewById(R.id.linearLayoutForThems);
+		background2=(RelativeLayout)findViewById(R.id.BackGroundThem);
+		
+		background1.setBackgroundResource(whatThemTouse());
+				
 		LMain.setOnItemClickListener(this);
 		
 		aaa = new FancyAdapterEditing();
