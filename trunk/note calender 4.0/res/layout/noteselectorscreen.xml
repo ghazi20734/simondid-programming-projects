@@ -3,16 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/backgroudNoteSelectorScreen1"
-     
+    android:id="@+id/linearLayoutForThems"
+     android:background="@drawable/them_blue_black" 
      >
 
 
     <RelativeLayout
+        android:id="@+id/BackGroundThem"
+      
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         android:id="@+id/backgroudNoteSelectorScreen2"
-        >
+         >
 
 
 
@@ -33,17 +34,24 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:gravity="bottom" >
-
+
+
+
+
             <TextView
-                android:id="@+id/TVcategory"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="left"
                 android:text="@string/SelecCategory"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
+
+
+
+
             <TextView
-                android:id="@+id/TVnote"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="left|right"
