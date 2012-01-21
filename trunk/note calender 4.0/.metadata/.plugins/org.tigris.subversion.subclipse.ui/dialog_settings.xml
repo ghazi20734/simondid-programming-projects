@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="554" key="passwordStores.size.y"/>
+	<item value="546" key="passwordStores.size.x"/>
+	<item value="200" key="HistoryDialog.weights.2"/>
+	<item value="139" key="UpdateDialog.location.y"/>
+	<item value="200" key="HistoryDialog.weights.1"/>
+	<item value="458" key="UpdateDialog.location.x"/>
+	<item value="200" key="HistoryDialog.weights.0"/>
+	<item value="102" key="HistoryTableProvider.HistoryDialog.Date"/>
+	<item value="81" key="HistoryTableProvider.HistoryDialog.Author"/>
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="203" key="HistoryTableProvider.HistoryDialog.Comment"/>
+	<item value="400" key="HistoryDialog.size.x"/>
+	<item value="525" key="UpdateDialog.size.x"/>
+	<item value="415" key="UpdateDialog.size.y"/>
+	<item value="400" key="HistoryDialog.size.y"/>
+	<item value="116" key="CommitDialog.location.y"/>
+	<item value="41" key="HistoryTableProvider.HistoryDialog.Revision"/>
+	<item value="157" key="CommitDialog.location.x"/>
+	<item value="46" key="passwordStores.location.y"/>
+	<item value="447" key="passwordStores.location.x"/>
+	<item value="1127" key="CommitDialog.size.x"/>
+	<item value="449" key="CommitDialog.size.y"/>
+	<item value="80" key="HistoryDialog.location.y"/>
+	<item value="520" key="HistoryDialog.location.x"/>
+	<section name="CommitWizard">
+		<item value="false" key="ShowCompare"/>
+		<item value="500" key="VWeight2"/>
+		<item value="500" key="VWeight1"/>
+	</section>
+</section>

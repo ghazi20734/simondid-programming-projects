@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/them_blue_black" >
+
+
+
+
+
+
+
+<EditText
+    android:id="@+id/ETdatatext"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/TVnote"
+    android:autoText="true"
+    android:editable="true"
+    android:focusable="true"
+    android:hint="@string/pleasEnterSomeText"
+    android:inputType="textMultiLine"
+    android:linksClickable="true"
+    android:longClickable="true"
+    android:textStyle="italic"
+    android:gravity="top" />
+
+
+
+        <TextView
+            android:id="@+id/TVcategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ETdatatext"
+            android:layout_toLeftOf="@+id/TVnote"
+            android:text="@string/Back" />
+
+
+        <TextView
+            android:id="@+id/TVnote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/Edit" />
+
+
+
+
+        <SlidingDrawer
+            android:id="@+id/slidingDrawer1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/TVcategory"
+            android:layout_alignTop="@+id/ETdatatext"
+            android:layout_centerHorizontal="true"
+            android:content="@+id/content"
+            android:handle="@+id/handle" >
+
+            <ImageView
+                android:id="@+id/handle"
+                android:layout_width="71dp"
+                android:layout_height="72dp"
+                android:src="@drawable/options" />
+
+              <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparentGray" >
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false" 
+                        android:focusable="false"
+                        android:text="@string/countDownAlarm" />
+
+
+                    <CheckBox
+                        android:id="@+id/checkBox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="@string/checkBox2" />
+
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="CheckBox"
+                        android:visibility="invisible" />
+
+
+
+                    <CheckBox
+                        android:id="@+id/checkBox4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="CheckBox"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </SlidingDrawer>
+
+    </RelativeLayout>
+
+</LinearLayout>
