@@ -37,7 +37,7 @@ public class DatabaseHandler {
 	private static final String KEY_ALARM_DATA_AND_TIME="AlarmDataAndTime";
 	private static final String KEY_IS_ALARM_SET="IsAlarmSet";
 	
-	private static final String DATABASE_NAME = ""+R.string.appname;
+	private static final String DATABASE_NAME = "NoteApp";
 	private static final String DATABASE_TABLE = "mainTable";
 	private static final String DATABASE_TABLE_categorys ="tableCategorys";
 	private static final int DATABASE_VERSION = 21;

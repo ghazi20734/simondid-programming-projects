@@ -37,5 +37,6 @@
     <string name="SelectNote">Select a Note</string>
     <string name="selectedCategory">Selected Category</string>
     <string name="PreferancesNamesForThems">Themes</string>
+    <string name="GoogleAnalyticsUAcode">UA-28468697-1</string>
 
 </resources>

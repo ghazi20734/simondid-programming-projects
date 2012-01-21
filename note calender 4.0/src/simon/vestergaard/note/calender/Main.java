@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import org.apache.commons.io.FileUtils;
 
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 import simon.vestergaard.note.calender.R.drawable;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -61,7 +63,7 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 	boolean backup=true;
 	boolean editingList=false;
 	DatabaseHandler database = new DatabaseHandler(Main.this);
-	
+	GoogleAnalyticsTracker tracker;
 	FancyAdapter aa=null;
 	FancyAdapterEditing aaa=null;
 	
@@ -145,6 +147,10 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 		}else{
 			LMain.setAdapter(aa);
 		}
+		tracker = GoogleAnalyticsTracker.getInstance();
+		tracker.startNewSession(this.getString(R.string.GoogleAnalyticsUAcode),1, this);
+		tracker.trackPageView("Main");
+		
 		
 		FillListDataWithData();
 		Main.context = getApplicationContext();
@@ -512,6 +518,12 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 		}
 	 
 		@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+			tracker.stop();
+		super.onDestroy();
+	}
+		@Override
 		public boolean onOptionsItemSelected(MenuItem item) {
 			// TODO Auto-generated method stub
 			switch (item.getItemId()){
@@ -541,6 +553,7 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 			case R.id.preferences:
 				startActivity(new Intent(this,Preferances.class));
 				overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+				tracker.trackEvent("preferances", "preferances", "Main", 0);
 				
 				break;
 				

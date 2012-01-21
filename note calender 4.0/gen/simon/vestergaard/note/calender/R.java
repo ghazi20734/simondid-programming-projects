@@ -163,6 +163,7 @@ public final class R {
         public static final int Edit=0x7f060003;
         public static final int Exit=0x7f06000c;
         public static final int FaileBackUp=0x7f060017;
+        public static final int GoogleAnalyticsUAcode=0x7f060024;
         public static final int Hint=0x7f06000e;
         public static final int ImportDatabaseDialogTitle=0x7f06001d;
         public static final int ImportDatabaseMessagePart1=0x7f06001e;
