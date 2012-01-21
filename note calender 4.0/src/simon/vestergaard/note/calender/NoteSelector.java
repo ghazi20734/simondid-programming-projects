@@ -122,7 +122,13 @@ public class NoteSelector extends Activity implements OnClickListener, OnItemCli
 		
 	}
 
-
+	private void startNoteClass(String Category,int SelectedPosistion){
+		Intent intent = new Intent();
+		intent.putExtra("category", Category);
+		intent.putExtra("selectedPosistion", SelectedPosistion);
+		startActivity(new Intent(this,Note.class).putExtra("category", Category).putExtra("selectedPosistion", SelectedPosistion));
+		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+	}
 
 	private void FillListDataWithData() {
 		// TODO Auto-generated method stub
@@ -157,8 +163,7 @@ if(editingList){
 		selectedPosition = position;
 	    noteName = listDataNote.get(position);
 		
-		startActivity(new Intent(this,Note.class));
-		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+		startNoteClass(Main.CategoryName, position);
 	}
 	public int getSelectedPosition(){
 		Log.i("NoteSelector"," selected position is = "+selectedPosition);

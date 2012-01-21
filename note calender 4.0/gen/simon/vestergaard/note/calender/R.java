@@ -97,8 +97,8 @@ public final class R {
         public static final int TcatagoryName=0x7f080010;
         public static final int TextView01=0x7f08002b;
         public static final int ThemSpinner=0x7f08002e;
-        public static final int TopBarBack=0x7f080033;
-        public static final int TopBarEdit=0x7f080035;
+        public static final int TopBarBack=0x7f080035;
+        public static final int TopBarEdit=0x7f080033;
         public static final int backgroudNoteScreen1=0x7f08001c;
         public static final int backgroudNoteScreen2=0x7f08001d;
         public static final int button1=0x7f080003;
@@ -160,6 +160,7 @@ public final class R {
         public static final int Delete=0x7f06001c;
         public static final int DialogShowMe=0x7f060010;
         public static final int Don=0x7f060007;
+        public static final int DontShowMe=0x7f060027;
         public static final int Edit=0x7f060003;
         public static final int Exit=0x7f06000c;
         public static final int FaileBackUp=0x7f060017;
@@ -183,8 +184,10 @@ public final class R {
         public static final int countDownAlarm=0x7f06000b;
         public static final int hello=0x7f060000;
         public static final int nothing=0x7f06000d;
+        public static final int notificationConText=0x7f060025;
         public static final int pleasEnterSomeText=0x7f06000a;
         public static final int selectedCategory=0x7f060022;
+        public static final int showME=0x7f060026;
         public static final int sort=0x7f060004;
     }
 }
