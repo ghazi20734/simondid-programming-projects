@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, NotecalenderActivity!</string>
+    <string name="app_name">Notecalender</string>
+    <string name="appname">Notecalender</string>
+    <string name="Edit">EDIT</string>
+    <string name="sort">Sort</string>
+    <string name="Back">Back</string>
+    <string name="New">" New"</string>
+    <string name="Don">Don</string>
+    <string name="ADD">ADD</string>
+    <string name="catagories">category</string>
+    <string name="pleasEnterSomeText">pleas enter some Text</string>
+    <string name="countDownAlarm">Set Alarm</string>
+    <string name="Exit">EXIT</string>
+    <string name="nothing"></string>
+    <string name="Hint">Pleas Enter Some Text</string>
+    <string name="AlarmIsSetText">Alarm Is set to : </string>
+    <string name="DialogShowMe">Show me</string>
+    <string name="checkBox1">Reminder</string>
+    <string name="checkBox2">add to calender</string>
+    <string name="checkBox3"/>
+    <string name="checkBox4"/>
+    <string name="Sync">BackUp</string>
+    <string name="CancelCountDownAlarm">Cancel Alarm</string>
+    <string name="FaileBackUp"> For some reason the APP dont have aces to the SD card </string>
+    <string name="BackUpDialogTitle"> Back Up Infomation </string>
+    <string name="BackUpDialogMessageGood">The database has been backed up to the sdcard folder /NoteCalender the database can be view bay a sql browser</string>
+    <string name="BackUpDon"> Back Up is don</string>
+    <string name="BackUpDialogMessageFail">For some Reason the app dont have acces to the SD card so it cant Make a backup off database</string>
+    <string name="Delete">Delete</string>
+    <string name="ImportDatabaseDialogTitle">Import Database Info</string>
+    <string name="ImportDatabaseMessagePart1">Pleas place the Database you want to import at sdcard/</string>
+    <string name="ImportDatabaseMessagePart2">/s</string>
+    <string name="SelecCategory">Select A category</string>
+    <string name="SelectNote">Select a Note</string>
+    <string name="selectedCategory">Selected Category</string>
+    <string name="PreferancesNamesForThems">Thems</string>
+
+</resources>

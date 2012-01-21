@@ -1,0 +1,9 @@
+INDEX VERSION 1.126+/Users/simon/Documents/programmering/development/android/.metadata/.plugins/org.eclipse.jdt.core
+1918688233.index
+1215259918.index
+4118317400.index
+215473590.index
+3175261748.index
+46971169.index
+947753780.index
+2733406352.index

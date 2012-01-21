@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="60" version="2.0">
+<workbenchAdvisor/>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Preferances.java" tooltip="note calender 4.0/src/simon/vestergaard/note/calender/Preferances.java">
+<persistable path="/note calender 4.0/src/simon/vestergaard/note/calender/Preferances.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="note calender 4.0/src/simon/vestergaard/note/calender/Main.java">
+<persistable path="/note calender 4.0/src/simon/vestergaard/note/calender/Main.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScreenTester.java" tooltip="note calender 4.0/src/simon/vestergaard/note/calender/ScreenTester.java">
+<persistable path="/note calender 4.0/src/simon/vestergaard/note/calender/ScreenTester.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmReceiverActivity.java" tooltip="note calender 4.0/src/simon/vestergaard/note/calender/AlarmReceiverActivity.java">
+<persistable path="/note calender 4.0/src/simon/vestergaard/note/calender/AlarmReceiverActivity.java"/>
+</file>
+</mruList>
+</workbench>

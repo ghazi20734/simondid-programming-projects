@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="with">#FFFFFF</color>
+    <color name="navyBlue">#5293DD</color>
+    <color name="blue">#2177DA</color>
+    <color name="gray2">#A79E9E</color>
+    <color name="transparentGray">#90808080</color>
+    <color name="transpartentGreen">#901CE21C</color>
+    <color name="ListViewBackGround">#90808080</color>
+    <color name="background">#90808080</color>
+    <color name="transparent">#99000000</color>
+    <color name="TopBarColor">#33CFFF</color>
+    <color name="ListviewColor">#1700B3</color>
+    <color name="black">#000000</color>
+ 
+    
+</resources>
