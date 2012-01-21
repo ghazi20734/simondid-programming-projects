@@ -108,15 +108,16 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 					     
 						    long curtime = System.currentTimeMillis();
 					        long setTime = cal.getTimeInMillis();
+					        
 					        long timeleft = setTime - curtime;
-					 
+					        
 				        
 					        DateFormat df2 = DateFormat.getDateInstance(DateFormat.SHORT);
 					       	       
 					        database.open();
 					    	String data = database.getNoteData(Selected_category, Selected_Note_rowid);
 					    	
-					    	createNotification(requestcode, "title", "body", pendingIntent, intent, Selected_category, Selected_Note_rowid, data,timeleft);
+					    	createNotification(requestcode, "title", "body", pendingIntent, intent, Selected_category, Selected_Note_rowid, data,cal);
 					    	 
 					       
 						       database.saveRequstCodeForAlarm(Selected_category, requestcode);
@@ -171,7 +172,9 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 	    finish();
 	    overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out );
 	}
-	 public int whatThemTouse(){
+
+
+	public int whatThemTouse(){
 			final String PREFS_NAME = "MyPrefsFile";
 			 SharedPreferences.Editor SettingsEditor = null;
 			 SharedPreferences settings = null;
@@ -202,8 +205,9 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 
 	private void initilize() {
 		// TODO Auto-generated method stub
-		Selected_category = mainClass.getSelectedCategory();
-		Selected_Note_rowid= NoteSelectorClass.selectedPosition;
+		Selected_category = getIntent().getStringExtra("category");
+		
+		Selected_Note_rowid= getIntent().getIntExtra("selectedPosistion", 0);
 		
 		
 		//Bback =(Button)findViewById(R.id.Bback);
@@ -338,6 +342,7 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 		
 	}
 
+
 	private void savedata() {
 		// TODO Auto-generated method stub
 		database.open();
@@ -359,7 +364,7 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 		
 		showDialog(DATE_DIALOG_ID);
 	
-
+cb1.setTag(this.getString(R.string.CancelCountDownAlarm));
 	      
 	}else{
 		String ns = Context.NOTIFICATION_SERVICE;
@@ -376,7 +381,7 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 		        am1.cancel(pendingIntent);
 				 Toast.makeText(this, "Alarm Cancel", Toast.LENGTH_LONG).show();    
 		
-				 
+				 cb1.setText(this.getString(R.string.countDownAlarm));
 	       }
 	          
 			 
@@ -404,6 +409,8 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 		}
 		
 	}
+
+
 	private static void addToCalendar(Context ctx, final String title, final long dtstart, final long dtend) {
 	    final ContentResolver cr = ctx.getContentResolver();
 	    Cursor cursor ;
@@ -458,27 +465,24 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 	    }
 	    cursor.close();
 	}
-	void createNotification(int requestcode,String MessageTitle,String MessageBody,PendingIntent pendingintent,Intent intent,String category,int Noteposisition,String data,long when){
-		String ns = Context.NOTIFICATION_SERVICE;
-        NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
-       
-        int icon = R.drawable.ic_launcher;
-        CharSequence tickerText = ""+R.string.app_name;
-      
-
-        Notification notification = new Notification(icon, tickerText, when);
-     
-        Context context = getApplicationContext();
-        CharSequence contentTitle = MessageTitle;
-        CharSequence contentText = MessageBody;
-        Intent notificationIntent = new Intent(this, NotificationActivity.class);
-       notificationIntent.putExtra("NotePosisition", Noteposisition);
-       notificationIntent.putExtra("category", category);
-        PendingIntent contentIntent = PendingIntent.getActivity(this, requestcode, notificationIntent, 0);
-        
-        notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
-      
-       // mNotificationManager.notify(requestcode, notification);
+	
+	
+	void createNotification(int requestcode,String MessageTitle,String MessageBody
+				,PendingIntent pendingintent1,Intent intent1,String category,int Noteposisition,String data,Calendar cal){
+	
+		
+		 
+		
+		Intent intent = new Intent(this, AlarmReceiverActivity.class);
+		intent.putExtra("category", Main.CategoryName);
+		intent.putExtra("NotePosisition", NoteSelector.selectedPosition);
+		intent.putExtra("RequestCode", requestcode);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,
+            requestcode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager am = 
+            (AlarmManager)getSystemService(Activity.ALARM_SERVICE);
+        am.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(),
+                pendingIntent);
 	}
 	 public void AddCategory(){
 

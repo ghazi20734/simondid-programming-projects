@@ -1,90 +1,61 @@
 package simon.vestergaard.note.calender;
 
-import java.io.IOException;
+import java.util.Random;
 
-import android.app.Dialog;
+import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface.OnCancelListener;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.media.RingtoneManager;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
 
 
-
-public class AlarmReceiverActivity extends Dialog {
+public class AlarmReceiverActivity extends Activity {
    
-
-	protected AlarmReceiverActivity(Context context, boolean cancelable,
-			OnCancelListener cancelListener) {
-		super(context, cancelable, cancelListener);
-		// TODO Auto-generated constructor stub
-	}
-
-	private MediaPlayer mMediaPlayer; 
-     
+     DatabaseHandler database = new DatabaseHandler(AlarmReceiverActivity.this);
+     String extraDataCategory;
+     int extraDataNotePosistion;
+     int extraDataRequestCode;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.alarm);
- 
-        Button stopAlarm = (Button) findViewById(R.id.stopAlarm);
-        stopAlarm.setOnTouchListener(new OnTouchListener() {
-            public boolean onTouch(View arg0, MotionEvent arg1) {
-                mMediaPlayer.stop();
-                
-                return false;
-            }
-            int hej =0;
-        });
- 
-       
-    }
- 
-    private void playSound(Context context, Uri alert) {
-        mMediaPlayer = new MediaPlayer();
-        try {
-            mMediaPlayer.setDataSource(context, alert);
-            final AudioManager audioManager = (AudioManager) context
-                    .getSystemService(Context.AUDIO_SERVICE);
-            if (audioManager.getStreamVolume(AudioManager.STREAM_ALARM) != 0) {
-                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
-                mMediaPlayer.prepare();
-                mMediaPlayer.start();
-            }
-        } catch (IOException e) {
-            System.out.println("OOPS");
-        }
-    }
- 
-        //Get an alarm sound. Try for an alarm. If none set, try notification, 
-        //Otherwise, ringtone.
-    private Uri getAlarmUri() {
-        Uri alert = RingtoneManager
-                .getDefaultUri(RingtoneManager.TYPE_ALARM);
-        if (alert == null) {
-            alert = RingtoneManager
-                    .getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-          
-            if (alert == null) {
-                alert = RingtoneManager
-                        .getDefaultUri(RingtoneManager.TYPE_RINGTONE);
-               
-            }
-        }
-        return alert;
-        
-        
-    }
+
+        getExtraData(); 
+	String ns = Context.NOTIFICATION_SERVICE;
+    NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
+   
+    int icon = R.drawable.ic_launcher;
+    CharSequence tickerText = this.getString(R.string.appname);
+  
+    Random r = new Random( System.currentTimeMillis() );
+    int requestcode= (1 + r.nextInt(2)) * 10000 + r.nextInt(10000);
     
+    Notification notification = new Notification(icon, tickerText, System.currentTimeMillis());
+ 
+    Context context = getApplicationContext();
+    CharSequence contentTitle = this.getString(R.string.app_name);
+    database.open();
+    CharSequence contentText = this.getString(R.string.app_name)+" "+this.getString(R.string.notificationConText);
+    database.close();
+    Intent notificationIntent = new Intent(this, NotificationActivity.class);
+   notificationIntent.putExtra("category", extraDataCategory);
+   notificationIntent.putExtra("NotePosisition", extraDataNotePosistion);
+    PendingIntent contentIntent = PendingIntent.getActivity(AlarmReceiverActivity.this, requestcode, notificationIntent, 0);
+    
+    notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+
+    mNotificationManager.notify(requestcode, notification);
+    }
+ 
+    private void getExtraData() {
+		// TODO Auto-generated method stub
+    	Intent sender=getIntent();
+        extraDataCategory=sender.getExtras().getString("category");
+        extraDataNotePosistion=sender.getExtras().getInt("NotePosisition");
+        extraDataRequestCode=sender.getExtras().getInt("RequestCode");
+	}
+
+	
+      
 }

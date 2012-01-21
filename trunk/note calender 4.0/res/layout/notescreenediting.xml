@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/backgroudNoteScreen1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
 
 
-
-
     <RelativeLayout
-        android:id="@+id/relativeLayout2"
+        android:id="@+id/backgroudNoteScreen2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/them_blue_black" >
+
+        >
 
 
 
@@ -32,8 +33,9 @@
     android:inputType="textMultiLine"
     android:linksClickable="true"
     android:longClickable="true"
-    android:textStyle="italic"
-    android:gravity="top" />
+    android:text=" "
+    android:textStyle="italic" 
+    android:gravity="top"/>
 
 
 
@@ -47,7 +49,6 @@
             android:layout_toLeftOf="@+id/TVnote"
             android:text="@string/Back" />
 
-
         <TextView
             android:id="@+id/TVnote"
             android:layout_width="wrap_content"
@@ -56,16 +57,12 @@
             android:layout_alignParentRight="true"
             android:text="@string/Edit" />
 
-
-
-
         <SlidingDrawer
             android:id="@+id/slidingDrawer1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignBottom="@+id/TVcategory"
-            android:layout_alignTop="@+id/ETdatatext"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
             android:content="@+id/content"
             android:handle="@+id/handle" >
 
@@ -75,14 +72,11 @@
                 android:layout_height="72dp"
                 android:src="@drawable/options" />
 
-              <LinearLayout
+            <LinearLayout
                 android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/transparentGray" >
-
-
-
 
                 <LinearLayout
                     android:id="@+id/linearLayout2"
@@ -94,30 +88,26 @@
                         android:id="@+id/checkBox1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:clickable="false" 
-                        android:focusable="false"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:text="@string/countDownAlarm" />
-
 
                     <CheckBox
                         android:id="@+id/checkBox2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:focusable="false"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:text="@string/checkBox2" />
-
 
                     <CheckBox
                         android:id="@+id/checkBox3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:focusable="false"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:text="CheckBox"
                         android:visibility="invisible" />
-
-
 
                     <CheckBox
                         android:id="@+id/checkBox4"
@@ -127,11 +117,8 @@
                         android:focusable="false"
                         android:text="CheckBox"
                         android:visibility="invisible" />
-
                 </LinearLayout>
-
             </LinearLayout>
-
         </SlidingDrawer>
 
     </RelativeLayout>

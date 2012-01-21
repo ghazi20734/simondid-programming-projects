@@ -18,18 +18,12 @@
     	android:numericShortcut="1"
     	android:alphabeticShortcut="a"/>
     
-  <item android:id="@+id/TopBarBack" 
-         android:showAsAction="ifRoom|withText" 
-         android:title="Back" 
-         android:icon="@drawable/ic_action_history"></item>
+  <item android:id="@+id/TopBarEdit" android:showAsAction="ifRoom|withText" android:title="Edit" android:icon="@drawable/ic_action_settings"></item>
    <item android:id="@+id/topbarADD" 
        android:showAsAction="ifRoom|withText" 
        android:title="Add" 
-       android:icon="@drawable/ic_action_open"></item>
-      <item android:id="@+id/TopBarEdit" 
-         android:showAsAction="ifRoom|withText" 
-         android:title="Edit" 
-         android:icon="@drawable/ic_action_settings"></item>
+       android:icon="@drawable/ic_action_open"></item><item android:id="@+id/TopBarBack" android:showAsAction="ifRoom|withText" android:title="Back" android:icon="@drawable/ic_action_history"></item>
+      
        
     
 </menu>
