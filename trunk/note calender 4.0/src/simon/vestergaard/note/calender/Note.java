@@ -22,6 +22,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -55,6 +56,8 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
     private int pDay;
     static final int TIME_DIALOG_ID = 1;
     static final int Dialog_add_selector=2;
+    static final int Dialog_import_database = 3;
+    
     /** This integer will uniquely define the dialog to be used for displaying date picker.*/
     static final int DATE_DIALOG_ID = 0;
      
@@ -149,8 +152,8 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 	TextView TVnoteName,TVcategory;
 	 Main mainClass = new Main();
 	 NoteSelector NoteSelectorClass = new NoteSelector();
-	 LinearLayout background;
-	 RelativeLayout background2;
+	// LinearLayout background;
+	 //RelativeLayout background2;
 	DatabaseHandler database = new DatabaseHandler(Note.this);
 	boolean editing = true;
 	String data;
@@ -201,7 +204,10 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 			return hej2;
 			
 		}
-	
+	public void setActivityBackgroundColor(int i) {
+	    View view = this.getWindow().getDecorView();
+	    view.setBackgroundResource(i);
+	}
 
 	private void initilize() {
 		// TODO Auto-generated method stub
@@ -215,10 +221,11 @@ public class Note extends Activity implements OnClickListener,OnCheckedChangeLis
 		EditTextData =(EditText)findViewById(R.id.ETdatatext);
 		TVnoteName =(TextView) findViewById(R.id.TVnote);
 		TVcategory =(TextView)findViewById(R.id.TVcategory);
-		background =(LinearLayout)findViewById(R.id.backgroudNoteScreen1);
-		background2=(RelativeLayout)findViewById(R.id.backgroudNoteScreen2);
-		background2.setBackgroundColor(whatThemTouse());
-		background.setBackgroundColor(whatThemTouse());
+	//	background =(LinearLayout)findViewById(R.id.backgroudNoteScreen1);
+		//background2=(RelativeLayout)findViewById(R.id.backgroudNoteScreen2);
+		//background2.setBackgroundColor(whatThemTouse());
+		//background.setBackgroundColor(whatThemTouse());
+		setActivityBackgroundColor(whatThemTouse());
 		cb1 =(CheckBox)findViewById(R.id.checkBox1);
 		cb2 =(CheckBox)findViewById(R.id.checkBox2);
 		cb3 =(CheckBox)findViewById(R.id.checkBox3);
@@ -588,6 +595,21 @@ cb1.setTag(this.getString(R.string.CancelCountDownAlarm));
 			})
 			.setMessage("Select what to add")
 			.create();
+ 
+        case Dialog_import_database:
+        	return new AlertDialog.Builder(Note.this)
+        	.setTitle(R.string.ImportDatabaseDialogTitle)
+        	/*.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					Log.i("Main","positive Button In dialog Box");
+					
+				}
+			})*/
+        	.setNegativeButton("Cancel", null)
+			.setMessage(R.string.ImportDatabaseMessagePart1)
+			.create();
         	
         
       
@@ -599,7 +621,7 @@ cb1.setTag(this.getString(R.string.CancelCountDownAlarm));
 		// TODO Auto-generated method stub
 				super.onCreateOptionsMenu(menu);
 				MenuInflater blowUp = getMenuInflater();
-				blowUp.inflate(R.menu.cool_menu, menu);
+				blowUp.inflate(R.menu.menu_for_note_screen, menu);
 				return true;
 
 		
@@ -630,14 +652,23 @@ cb1.setTag(this.getString(R.string.CancelCountDownAlarm));
 		case R.id.topbarADD:
 			showDialog(Dialog_add_selector);
 			break;
+		case R.id.MenuExportDatabase:
+			showDialog(Dialog_import_database);
+			break;
 		case R.id.MenuImportDatabase:
-		
+		showDialog(Dialog_import_database);
 			
 			break;
 		case R.id.preferences:
-			
+			startActivity(new Intent(this,Preferances.class));
+			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+		
 			break;
 		case R.id.TopBarBack:
+			 finish();
+			 startActivity(new Intent(this,NoteSelector.class));
+				overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+			
 			break;
 		
 		

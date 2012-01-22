@@ -9,7 +9,7 @@
      
     <item
     	android:title="Export Database"
-    	android:id="@+id/MenuBackUp"
+    	android:id="@+id/MenuExportDatabase"
     	android:numericShortcut="1"
     	android:alphabeticShortcut="a"/>	 
     <item
