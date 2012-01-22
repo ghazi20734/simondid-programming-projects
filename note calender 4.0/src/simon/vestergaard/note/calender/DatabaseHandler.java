@@ -83,6 +83,7 @@ public class DatabaseHandler {
 					KEY_ALARM_REQUEST_CODE +" INTEGER, "+
 					KEY_ALARM_DATA_AND_TIME +" TEXT);"
 					);
+		
 		}
 		
 		@Override
@@ -259,6 +260,7 @@ public class DatabaseHandler {
 			}
 			
 			return test;
+			
 		}
 
 		public String getNoteData(String selected_category,int SelectedPosition){

@@ -32,13 +32,19 @@ public class Preferances extends Activity implements OnClickListener, OnItemSele
 		
 		initilize();
 	}
-
+	 public void setActivityBackgroundColor(int i) {
+		    View view = this.getWindow().getDecorView();
+		    view.setBackgroundResource(i);
+		}
 	private void initilize() {
 		// TODO Auto-generated method stub
+		
 		getSelectedThem();
 		themSpinner =(Spinner)findViewById(R.id.ThemSpinner);
 		background=(LinearLayout)findViewById(R.id.BackGroundPreferances);
-		//background.setBackgroundColor(whatThemTouse());
+		background.setBackgroundColor(whatThemTouse());
+		setActivityBackgroundColor(whatThemTouse());
+		
 		ArrayAdapter ad=new ArrayAdapter(this,android.R.layout.simple_spinner_item,items);
 		 ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		 themSpinner.setSelection(themposisition);
@@ -130,8 +136,8 @@ Log.i("Preferances", "pink and black choosen");
 			 settings = getSharedPreferences(PREFS_NAME, 0);
 			    SettingsEditor = settings.edit();
 			drawable hej = new drawable();
-		
-			int hej2;
+			int hej2 = hej.them_blue_black;
+			
 			if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==1){
 				hej2 =hej.them_green_black;	
 			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==2){
@@ -144,11 +150,9 @@ Log.i("Preferances", "pink and black choosen");
 				hej2 =hej.them_orange_black;
 			}else if(settings.getInt(KEY_PREFERANCES_THEMES, 0)==7){
 				hej2 =hej.them_black_black;
-			}else{
-				hej2 = hej.them_blue_black;		
 			}
 				
-			
+		
 			return hej2;
 			
 		}

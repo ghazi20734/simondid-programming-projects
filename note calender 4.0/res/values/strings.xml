@@ -31,7 +31,7 @@
     <string name="BackUpDialogMessageFail">For some Reason the app dont have acces to the SD card so it cant Make a backup off database</string>
     <string name="Delete">Delete</string>
     <string name="ImportDatabaseDialogTitle">Import Database Info</string>
-    <string name="ImportDatabaseMessagePart1">Pleas place the Database you want to import at sdcard/</string>
+    <string name="ImportDatabaseMessagePart1">This feature is coming soon. with many othere like dropbox sync for multipul devices </string>
     <string name="ImportDatabaseMessagePart2">/s</string>
     <string name="SelecCategory">Select A category</string>
     <string name="SelectNote">Select a Note</string>
@@ -41,5 +41,6 @@
     <string name="notificationConText">has some Notes you might wanna take a look at</string>
     <string name="showME">Show me</string>
     <string name="DontShowMe">Cancel</string>
+    <string name="headerViewShowAll">All Notes</string>
 
 </resources>

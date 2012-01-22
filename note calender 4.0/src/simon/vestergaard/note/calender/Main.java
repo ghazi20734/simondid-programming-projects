@@ -117,40 +117,34 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 				hej2 =hej.them_black_black;
 			}
 				
-			
+		
 			return hej2;
 			
+		}
+	 public void setActivityBackgroundColor(int i) {
+		    View view = this.getWindow().getDecorView();
+		    view.setBackgroundResource(i);
 		}
 	private void initilize() {
 		// TODO Auto-generated method stub
 		LMain =(ListView)findViewById(R.id.LMain);
-	/*	Badd = (Button)findViewById(R.id.Badd);
-		Bsync =(Button)findViewById(R.id.Bsync);
-		header =(TextView)findViewById(R.id.TVmainHeader);
-		Bedit=(Button)findViewById(R.id.Bedit);
-		Bedit.setOnClickListener(this);
-		Badd.setOnClickListener(this);
-		Bsync.setOnClickListener(this);*/
 	
-		BackGround=(LinearLayout)findViewById(R.id.linearLayoutForThems);
-		background2=(RelativeLayout)findViewById(R.id.BackGroundThem);
+
+				setActivityBackgroundColor(whatThemTouse());
 		
-		BackGround.setBackgroundResource(whatThemTouse());
 				
-		
-		
 		aa = new FancyAdapter();
 		aaa = new FancyAdapterEditing();
 		LMain.setOnItemClickListener(this);
 		if(editingList){
-			LMain.setAdapter(aaa);
-		}else{
-			LMain.setAdapter(aa);
-		}
-		tracker = GoogleAnalyticsTracker.getInstance();
-		tracker.startNewSession(this.getString(R.string.GoogleAnalyticsUAcode),1, this);
-		tracker.trackPageView("Main");
 		
+			LMain.setAdapter(aaa);
+			
+		}else{
+			
+			LMain.setAdapter(aa);
+			
+		}
 		
 		FillListDataWithData();
 		Main.context = getApplicationContext();
@@ -190,7 +184,31 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 
 
 
+	class allItems extends ArrayAdapter<String>{
+    	
+		allItems(){
+    		super(Main.this, R.layout.row, listData);
+    	
+    	}
+
+
+		
+	public View getView (int position, View convertView,ViewGroup parent){
+		View row = convertView;
+		
+		if ( row ==null){
+			LayoutInflater inflater = getLayoutInflater();
+		
+				row=inflater.inflate(R.layout.row, null);	
+			
+		}
+		((TextView)row.findViewById(R.id.textView1)).setText("alle NOtes");
+		//((TextView)row.findViewById(R.id.textView2)).setText(listDataWithNumberOffNotes.get(position));
 	
+	
+		return row;
+	}
+}
 
 
 	class FancyAdapter extends ArrayAdapter<String>{
@@ -251,11 +269,13 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 						database.deleteCategory(listDataRowIds.get(position), listData.get(position));
 						database.close();
 						if(editingList){
-							
+							editingList = false;
 							aaa.notifyDataSetChanged();
+							initilize();
 						}else{
-							
+							editingList = true;
 							aa.notifyDataSetChanged();
+							initilize();
 						}
 						
 					}
@@ -446,14 +466,14 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 	        case Dialog_import_database:
 	        	return new AlertDialog.Builder(Main.this)
 	        	.setTitle(R.string.ImportDatabaseDialogTitle)
-	        	.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	        	/*.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 					
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
 						Log.i("Main","positive Button In dialog Box");
 						
 					}
-				})
+				})*/
 	        	.setNegativeButton("Cancel", null)
 				.setMessage(R.string.ImportDatabaseMessagePart1)
 				.create();
@@ -550,10 +570,13 @@ public class Main extends Activity implements OnClickListener, OnItemClickListen
 			showDialog(Dialog_import_database);
 				
 				break;
+			case R.id.MenuExportDatabase:
+				showDialog(Dialog_import_database);
+				break;
 			case R.id.preferences:
 				startActivity(new Intent(this,Preferances.class));
 				overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-				tracker.trackEvent("preferances", "preferances", "Main", 0);
+			
 				
 				break;
 				

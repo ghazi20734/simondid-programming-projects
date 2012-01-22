@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/BackGroundPreferances"
-      android:background="@drawable/them_blue_black">
+      >
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"

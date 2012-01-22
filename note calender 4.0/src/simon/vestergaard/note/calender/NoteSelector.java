@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import simon.vestergaard.note.calender.R.drawable;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,6 +37,7 @@ public class NoteSelector extends Activity implements OnClickListener, OnItemCli
 
 	
 	public static String noteName=null;
+	public static final int Dialog_import_database = 3;
 	Button Bback,Bnew,Bedit;
 	ListView LMain;
 	private static final String KEY_PREFERANCES_THEMES="themess";
@@ -92,6 +94,10 @@ public class NoteSelector extends Activity implements OnClickListener, OnItemCli
 			return hej2;
 			
 		}
+	 public void setActivityBackgroundColor(int i) {
+		    View view = this.getWindow().getDecorView();
+		    view.setBackgroundResource(i);
+		}
 	private void initilize() {
 		// TODO Auto-generated method stub
 	/*	Bback =(Button)findViewById(R.id.Bback);
@@ -101,11 +107,11 @@ public class NoteSelector extends Activity implements OnClickListener, OnItemCli
 		TVnote =(TextView)findViewById(R.id.textView2);
 		//Bedit =(Button)findViewById(R.id.Bedit);
 		
-		background1=(LinearLayout)findViewById(R.id.linearLayoutForThems);
-		background2=(RelativeLayout)findViewById(R.id.BackGroundThem);
+		//background1=(LinearLayout)findViewById(R.id.linearLayoutForThems);
+		//background2=(RelativeLayout)findViewById(R.id.BackGroundThem);
 		
-		background1.setBackgroundResource(whatThemTouse());
-				
+		//background1.setBackgroundResource(whatThemTouse());
+				setActivityBackgroundColor(whatThemTouse());
 		LMain.setOnItemClickListener(this);
 		
 		aaa = new FancyAdapterEditing();
@@ -286,7 +292,7 @@ if(editingList){
 			}
 		
 		((TextView)row.findViewById(R.id.textView1)).setText(listDataNote.get(position));
-		((TextView)row.findViewById(R.id.textView2)).setText(""+listAlarmTime.get(position));
+		((TextView)row.findViewById(R.id.textView2)).setText(listAlarmTime.get(position));
 		
 			((Button)row.findViewById(R.id.Bdelete)).setOnClickListener(new OnClickListener() {
 				
@@ -294,14 +300,16 @@ if(editingList){
 					// TODO Auto-generated method stub
 					Log.i("Main", "delete button phused");
 					database.open();
-					database.deleteNote(listDataNoteRowIds.get(position), mainClass.getSelectedCategory());
+					database.deleteCategory(listDataNoteRowIds.get(position), listDataNote.get(position));
 					database.close();
 					if(editingList){
-						
+						editingList = false;
 						aaa.notifyDataSetChanged();
+						initilize();
 					}else{
-						
+						editingList = true;
 						aa.notifyDataSetChanged();
+						initilize();
 					}
 					
 				}
@@ -309,8 +317,9 @@ if(editingList){
 		
 	
 		return row;
-		}
 	}
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(android.view.Menu menu) {
 		// TODO Auto-generated method stub
@@ -322,7 +331,30 @@ if(editingList){
 		
 	
 	}
-
+	 @Override
+	    protected Dialog onCreateDialog(int id) {
+	        switch (id) {
+	   
+	        case Dialog_import_database:
+	        	return new AlertDialog.Builder(NoteSelector.this)
+	        	.setTitle(R.string.ImportDatabaseDialogTitle)
+	        	/*.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+					
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						Log.i("Main","positive Button In dialog Box");
+						
+					}
+				})*/
+	        	.setNegativeButton("Cancel", null)
+				.setMessage(R.string.ImportDatabaseMessagePart1)
+				.create();
+	        }
+	        	
+	        
+	        return null;
+	    }
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
@@ -330,11 +362,18 @@ if(editingList){
 		case R.id.topbarADD:
 			AddNote();
 			break;
+	
+		case R.id.MenuExportDatabase:
+			showDialog(Dialog_import_database);
+			break;
 		case R.id.MenuImportDatabase:
-		
+		showDialog(Dialog_import_database);
 			
 			break;
 		case R.id.preferences:
+			startActivity(new Intent(this,Preferances.class));
+			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+		
 			
 			break;
 		

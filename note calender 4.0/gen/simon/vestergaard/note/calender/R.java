@@ -87,7 +87,7 @@ public final class R {
         public static final int ImageView01=0x7f080029;
         public static final int LMain=0x7f080007;
         public static final int LnoteSelector=0x7f08000d;
-        public static final int MenuBackUp=0x7f080031;
+        public static final int MenuExportDatabase=0x7f080031;
         public static final int MenuImportDatabase=0x7f080030;
         public static final int ScrollView01=0x7f08002a;
         public static final int TVcategory=0x7f080020;
@@ -132,21 +132,23 @@ public final class R {
         public static final int alarm=0x7f030000;
         public static final int animationtest=0x7f030001;
         public static final int dropboxtest=0x7f030002;
-        public static final int listviewediting=0x7f030003;
-        public static final int mainscreen=0x7f030004;
-        public static final int makenotescreen=0x7f030005;
-        public static final int notescreen=0x7f030006;
-        public static final int notescreenediting=0x7f030007;
-        public static final int noteselectorscreen=0x7f030008;
-        public static final int notificationdialog=0x7f030009;
-        public static final int preferancesscreen=0x7f03000a;
-        public static final int row=0x7f03000b;
-        public static final int rowed=0x7f03000c;
-        public static final int sonostest=0x7f03000d;
-        public static final int test=0x7f03000e;
+        public static final int headerview=0x7f030003;
+        public static final int listviewediting=0x7f030004;
+        public static final int mainscreen=0x7f030005;
+        public static final int makenotescreen=0x7f030006;
+        public static final int notescreen=0x7f030007;
+        public static final int notescreenediting=0x7f030008;
+        public static final int noteselectorscreen=0x7f030009;
+        public static final int notificationdialog=0x7f03000a;
+        public static final int preferancesscreen=0x7f03000b;
+        public static final int row=0x7f03000c;
+        public static final int rowed=0x7f03000d;
+        public static final int sonostest=0x7f03000e;
+        public static final int test=0x7f03000f;
     }
     public static final class menu {
         public static final int cool_menu=0x7f070000;
+        public static final int menu_for_note_screen=0x7f070001;
     }
     public static final class string {
         public static final int ADD=0x7f060008;
@@ -182,6 +184,7 @@ public final class R {
         public static final int checkBox3=0x7f060013;
         public static final int checkBox4=0x7f060014;
         public static final int countDownAlarm=0x7f06000b;
+        public static final int headerViewShowAll=0x7f060028;
         public static final int hello=0x7f060000;
         public static final int nothing=0x7f06000d;
         public static final int notificationConText=0x7f060025;
